@@ -5,7 +5,7 @@ import re
 import pytest
 
 NML_PATH_1 = "input.new.nml"
-NML_PATH_2 = "input.nml.old"
+NML_PATH_2 = "input.old.nml"
 #NML_PATH_2 = "input.new.nml"
 
 WORK_NML_PATH = "input.nml"
@@ -54,6 +54,7 @@ def extract_value(output, member=1):
     match = re.search(error_pattern, output)
     if match:
         error_code = int(float(match.group(1)))
+        print(f"Found ERROR with code: {error_code}")
         return error_code, 'error'
     raise ValueError("Neither SUCCESS value nor ERROR code found in output")
 

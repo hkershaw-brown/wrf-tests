@@ -1,0 +1,8 @@
+__pycache__/
+dart_log.nml
+dart_log.out
+input.nml
+*.nc
+perfect_model_obs
+wrfinput_d01
+
