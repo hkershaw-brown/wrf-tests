@@ -58,9 +58,23 @@ quantities = [
     "QTY_PRESSURE",
     "QTY_GEOPOTENTIAL_HEIGHT",
     "QTY_VERTICAL_VELOCITY",
-    "QTY_QVAPOR",
-
+    "QTY_VAPOR_MIXING_RATIO",
+    "QTY_U10_WIND_COMPONENT",
+    "QTY_V10_WIND_COMPONENT",
+    "QTY_SURFACE_PRESSURE",
+    "QTY_2M_TEMPERATURE",
+    "QTY_SKIN_TEMPERATURE",
+    "QTY_LANDMASK",
+    "QTY_SURFACE_ELEVATION",
+    "QTY_RADAR_REFLECTIVITY",
+    "QTY_CONDENSATIONAL_HEATING",
+    "QTY_RAIN_NUMBER_CONCENTR",
+    "QTY_CLOUDWATER_MIXING_RATIO"
 ]
+
+# not in wrf file:
+# "QTY_2M_SPECIFIC_HUMIDITY"
+
 heights = np.random.uniform(400, 2000, N)
 pressures = np.random.uniform(50000, 100000, N)  # Example pressures in Pa
 levels = np.random.randint(1, 30, N)  # Example model levels
@@ -74,12 +88,12 @@ for i in range(N):
     height = round(heights[i], 1)
     pressure = round(pressures[i], 1)
     level = levels[i]
-    scaleheight = round(scaleheights[i], 1)
+    #scaleheight = round(scaleheights[i], 1)
     qty = np.random.choice(quantities)
     #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {height}), \"{qty}\")")
-    #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {pressure}), \"{qty}\")")
+    test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {pressure}), \"{qty}\")")
     #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {level}), \"{qty}\")")
-    test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {scaleheight}), \"{qty}\")")
+    #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {scaleheight}), \"{qty}\")")
 
 
 print("test_cases = [")

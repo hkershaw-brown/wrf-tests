@@ -208,7 +208,18 @@
                          'THM',     'QTY_POTENTIAL_TEMPERATURE','TYPE_T',    'UPDATE','999',
                          'MU',    'QTY_PRESSURE',             'TYPE_MU',   'UPDATE','999',
                          'QVAPOR','QTY_VAPOR_MIXING_RATIO',   'TYPE_QV',   'UPDATE','999',
-                         'PSFC',  'QTY_SURFACE_PRESSURE',     'TYPE_PSFC', 'UPDATE','999',
+                         'PSFC',  'QTY_SURFACE_PRESSURE',     'TYPE_PSFC', 'UPDATE','999',    
+                         'U10',   'QTY_10M_U_WIND_COMPONENT',     'TYPE_U10', 'UPDATE','999',
+                         'V10',   'QTY_10M_V_WIND_COMPONENT',     'TYPE_V10', 'UPDATE','999',
+                         'QNRAIN', 'QTY_RAIN_NUMBER_CONCENTR', 'TYPE_QNRAIN', 'UPDATE', '999',
+                         'QCLOUD', 'QTY_CLOUDWATER_MIXING_RATIO', 'TYPE_QCLOUD', 'UPDATE', '999'
+                         'H_DIABATIC', 'QTY_CONDENSATIONAL_HEATING', 'TYPE_H_DIABATIC', 'UPDATE', '999',
+                         'REFL_10CM', 'QTY_RADAR_REFLECTIVITY', 'TYPE_REFL_10CM', 'UPDATE', '999',
+                         'TSK', 'QTY_SKIN_TEMPERATURE', 'TYPE_TSK', 'UPDATE', '999',
+                         'RE_ICE', 'QTY_CLOUD_ICE_DE', 'TYPE_DE', 'UPDATE', '999',
+                         'RE_CLOUD', 'QTY_CLOUDWATER_DE', 'TYPE_DE', 'UPDATE', '999',
+                         'T2', 'QTY_2M_TEMPERATURE', 'TYPE_T2', 'UPDATE', '999',
+                         'TH2', 'QTY_2M_POTENTIAL_TEMPERATURE', 'TYPE_TH2', 'UPDATE', '999',                        
    wrf_state_bounds    = 'QVAPOR','0.0','NULL','CLAMP',
                          'QRAIN', '0.0','NULL','CLAMP',
                          'QCLOUD','0.0','NULL','CLAMP',
@@ -544,7 +555,7 @@
    input_state_files     = 'wrfinput_d01', 'wrfinput_d02'
    output_state_files    = 'mmc1_output1.nc', 'mmc1_output2.nc'
    test1thru             = 4
-   run_tests             = 1,2,3,4,5
+   run_tests             = 1,2,3,4
    x_ind                 = 87370
    loc_of_interest       = 231.0, 40.0, 10.0
    quantity_of_interest  = 'QTY_U_WIND_COMPONENT'
@@ -554,7 +565,7 @@
    interp_test_lonrange  = 250.0,  260.0
    interp_test_latrange  =  30.0,   45.0
    interp_test_vertrange = 2000.0, 4000.0
-   interp_test_vertcoord = 'VERTISHEIGHT'
+   interp_test_vertcoord = 'VERTISPRESSURE'
    verbose               = .false.
    /
 

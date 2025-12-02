@@ -209,6 +209,8 @@
                          'MU',    'QTY_PRESSURE',             'TYPE_MU',   'UPDATE','999',
                          'QVAPOR','QTY_VAPOR_MIXING_RATIO',   'TYPE_QV',   'UPDATE','999',
                          'PSFC',  'QTY_SURFACE_PRESSURE',     'TYPE_PSFC', 'UPDATE','999',
+                         'U10',   'QTY_10M_U_WIND_COMPONENT',     'TYPE_U10', 'UPDATE','999',
+                         'V10',   'QTY_10M_V_WIND_COMPONENT',     'TYPE_V10', 'UPDATE','999',
    wrf_state_bounds    = 'QVAPOR','0.0','NULL','CLAMP',
                          'QRAIN', '0.0','NULL','CLAMP',
                          'QCLOUD','0.0','NULL','CLAMP',
@@ -546,15 +548,15 @@
    test1thru             = 4
    run_tests             = 1,2,3,4
    x_ind                 = 87370
-   loc_of_interest       = 358.813, 43.418, 14
-   quantity_of_interest  = 'QTY_U_WIND_COMPONENT'
+   loc_of_interest       = 358.483, 44.179, 58982.5
+   quantity_of_interest  = 'QTY_LANDMASK'
    interp_test_dlon      = 0.1
    interp_test_dlat      = 0.1
    interp_test_dvert     = 1000.0
    interp_test_lonrange  = 250.0,  260.0
    interp_test_latrange  =  30.0,   45.0
    interp_test_vertrange = 2000.0, 4000.0
-   interp_test_vertcoord = 'VERTISLEVEL'
+   interp_test_vertcoord = 'VERTISPRESSURE'
    verbose               = .false.
    /
 

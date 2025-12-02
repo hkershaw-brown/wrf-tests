@@ -206,6 +206,17 @@
                          'MU',    'QTY_PRESSURE',             'UPDATE','999',
                          'QVAPOR','QTY_VAPOR_MIXING_RATIO',   'UPDATE','999',
                          'PSFC',  'QTY_SURFACE_PRESSURE',     'UPDATE','999',
+                         'U10',   'QTY_10M_U_WIND_COMPONENT',     'UPDATE','999',
+                         'V10',   'QTY_10M_V_WIND_COMPONENT',     'UPDATE','999',
+                         'QNRAIN', 'QTY_RAIN_NUMBER_CONCENTR',  'UPDATE', '999',
+                         'QCLOUD', 'QTY_CLOUDWATER_MIXING_RATIO',  'UPDATE', '999'
+                         'H_DIABATIC', 'QTY_CONDENSATIONAL_HEATING',  'UPDATE', '999',
+                         'REFL_10CM', 'QTY_RADAR_REFLECTIVITY',  'UPDATE', '999',
+                         'TSK', 'QTY_SKIN_TEMPERATURE',  'UPDATE', '999',
+                         'RE_ICE', 'QTY_CLOUD_ICE_DE',  'UPDATE', '999',
+                         'RE_CLOUD', 'QTY_CLOUDWATER_DE',  'UPDATE', '999',
+                         'T2', 'QTY_2M_TEMPERATURE', 'UPDATE', '999',
+                         'TH2', 'QTY_2M_POTENTIAL_TEMPERATURE', 'UPDATE', '999',   
    wrf_state_bounds    = 'QVAPOR','0.0','NULL',
                          'QRAIN', '0.0','NULL',
                          'QCLOUD','0.0','NULL',
@@ -543,15 +554,15 @@
    test1thru             = 4
    run_tests             = 1,2,3,4
    x_ind                 = 87370
-   loc_of_interest       = 231.0, 40.0, 500.0
-   quantity_of_interest  = 'QTY_POTENTIAL_TEMPERATURE'
+   loc_of_interest       = 358.176, 44.011, 10.0
+   quantity_of_interest  = 'QTY_10M_U_WIND_COMPONENT'
    interp_test_dlon      = 0.1
    interp_test_dlat      = 0.1
    interp_test_dvert     = 1000.0
    interp_test_lonrange  = 250.0,  260.0
    interp_test_latrange  =  30.0,   45.0
    interp_test_vertrange = 2000.0, 4000.0
-   interp_test_vertcoord = 'VERTISHEIGHT'
+   interp_test_vertcoord = 'VERTISPRESSURE'
    verbose               = .false.
    /
 
