@@ -88,11 +88,13 @@ for i in range(N):
     height = round(heights[i], 1)
     pressure = round(pressures[i], 1)
     level = levels[i]
+    surface = 0.01 # m
     #scaleheight = round(scaleheights[i], 1)
     qty = np.random.choice(quantities)
     #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {height}), \"{qty}\")")
     test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {pressure}), \"{qty}\")")
     #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {level}), \"{qty}\")")
+    #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {surface}), \"{qty}\")")
     #test_cases.append(f"(({lon_360:.3f}, {lat:.3f}, {scaleheight}), \"{qty}\")")
 
 
