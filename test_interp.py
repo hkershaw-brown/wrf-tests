@@ -50,8 +50,15 @@ def generate_test_cases_for_vertcoord(vertcoord, N=100, nc_file='wrfinput_d01'):
         "QTY_QVAPOR",
         "QTY_SURFACE_PRESSURE",
         "QTY_U10_WIND_COMPONENT",
-        "QTY_V10_WIND_COMPONENT"
+        "QTY_V10_WIND_COMPONENT",
+        "QTY_DENSITY",
+        "QTY_LANDMASK",
+        "QTY_SURFACE_ELEVATION",
+        "QTY_SURFACE_TYPE",
+        "QTY_SPECIFIC_HUMIDITY"
     ]
+
+    #quantities = ["QTY_SPECIFIC_HUMIDITY"]
 
     #np.random.seed(42)  # For reproducibility
     heights = np.random.uniform(400, 2000, N)
@@ -131,7 +138,11 @@ for verticoord in vertical_options:
     for test_case in cases:
         all_test_params.append((verticoord, test_case))
 
-@pytest.mark.parametrize("verticoord,test_case", all_test_params)
+#ids=[f"{v}-{tc[1]}" for v, tc in all_test_params]
+@pytest.mark.parametrize("verticoord,test_case", 
+                         all_test_params,                          
+                         ids=[f"{v}-{tc[1]}-{tc[0][0]:.3f}-{tc[0][1]:.3f}-{tc[0][2]}" for v, tc in all_test_params]
+)
 def test_model_mod_check_equality(verticoord, test_case):
     loc, qty = test_case
     print(f"RUNNING: verticoord={verticoord}, test_case=(({loc[0]}, {loc[1]}, {loc[2]}), \"{qty}\")")
