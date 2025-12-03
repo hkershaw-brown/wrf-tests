@@ -15,3 +15,23 @@ test_case_to_namelist.py
 ```
 python test_case_to_namelist.py '((359.974, 43.298, 463.5), "QTY_POTENTIAL_TEMPERATURE")'  
 ```
+
+
+To generate code coverage reports:
+
+Compile with. 
+
+`FFLAGS  = -O0 -fprofile-arcs -ftest-coverage -ffree-line-length-none $(INCS)`
+
+Run
+
+`test_interp.py`
+
+
+Once the tests have run, run the following in the build directory:
+
+```
+lcov --gcov-tool=/opt/local/bin/gcov-mp-14 --capture --directory . --output-file coverage.info
+genhtml coverage.info --output-directory coverage_html
+```
+
